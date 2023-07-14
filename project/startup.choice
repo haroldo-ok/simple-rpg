@@ -6,4 +6,10 @@
 
 * background "lich.png"
 
-Test!
+* temp randomValue, 0
+
+* while true
+	* native random, into(randomValue)
+	* set randomValue, (randomValue - (randomValue / 6) * 6) + 1
+	Test! ${randomValue}
+	* flush
