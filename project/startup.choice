@@ -48,6 +48,10 @@
 * else
 	You defeated the boss!
 	
+* background "obligatory ketchup.png"
+Originally made for Low Quality Game Jam 6.
+Obligatory Ketchup. ;)
+	
 * set enemy_hp, 100
 * set player_hp, 100
 * set player_mp, 50
