@@ -1,7 +1,7 @@
 #ifndef _EXTRA_H_
 #define _EXTRA_H_
 
-#import <genesis.h>
+#include <genesis.h>
 
 extern u16 rollDice(u16 diceQuantity, u16 faceQuantity);
 

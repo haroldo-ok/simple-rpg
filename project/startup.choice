@@ -23,6 +23,7 @@
 			Your phisical attack causes ${randomValue} of damage!
 			* set enemy_hp, enemy_hp - randomValue
 		# Spell
+			* sound "opengameart - fireball-1 - 105016__julien-matthey__jm-fx-fireball-01.wav", adpcm
 			* native rollDice, 3, 6, into(randomValue)
 			Your magical attack causes ${randomValue} of damage!
 			* set enemy_hp, enemy_hp - randomValue
