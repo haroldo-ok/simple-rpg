@@ -10,6 +10,7 @@
 * create player_hp, 150
 
 * background "lich.png"
+* music "opengameart - epic-boss-theme - helmet-tales-of-the-helmet_s-knight-18-boss-theme-ordmaer_-king-of-the-windymoon.wav", adpcm
 
 * temp randomValue, 0
 
