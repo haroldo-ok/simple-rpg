@@ -19,6 +19,7 @@
 	Lich HP: ${enemy_hp}
 	* choice
 		# Attack
+			* sound "opengameart - 20-sword-sound-effects-attacks-and-clashes - sword_clash.1.wav", adpcm
 			* native rollDice, 2, 6, into(randomValue)
 			Your phisical attack causes ${randomValue} of damage!
 			* set enemy_hp, enemy_hp - randomValue
@@ -27,6 +28,8 @@
 			* native rollDice, 3, 6, into(randomValue)
 			Your magical attack causes ${randomValue} of damage!
 			* set enemy_hp, enemy_hp - randomValue
+
+	* sound "opengameart - evil-laugh-2 - evil_laugh_02.wav", adpcm
 	* native rollDice, 3, 6, into(randomValue)
 	The elder lich causes ${randomValue} of damage!
 	* set player_hp, player_hp - randomValue
