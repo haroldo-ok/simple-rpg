@@ -1,7 +1,57 @@
-* title "choice4genesis simple rpg"
+* title "choice4genesis Simple RPG POC 0.0.1"
 * author "Haroldo O. Pinheiro"
+
+* import "extra.h"
 
 * font "damieng.com - Hourglass font.png"
 * cursor "Cursor sprite.png", 1, 1, 3
 
-Test!
+* create enemy_hp, 100
+* create player_hp, 100
+* create player_mp, 50
+
+* background "lich.png"
+* music "opengameart - epic-boss-theme - helmet-tales-of-the-helmet_s-knight-18-boss-theme-ordmaer_-king-of-the-windymoon.wav", adpcm
+
+* temp randomValue, 0
+
+* while enemy_hp > 0 and player_hp > 0
+	Player HP: ${player_hp} MP: ${player_mp}
+	Lich HP: ${enemy_hp}
+	* choice
+		# Attack
+			* sound "opengameart - 20-sword-sound-effects-attacks-and-clashes - sword_clash.1.wav", adpcm
+			* native rollDice, 2, 6, into(randomValue)
+			Your phisical attack causes ${randomValue} of damage!
+			* set enemy_hp, enemy_hp - randomValue
+		# Spell
+			* if player_mp > 0
+				* sound "opengameart - fireball-1 - 105016__julien-matthey__jm-fx-fireball-01.wav", adpcm
+				* native rollDice, 3, 6, into(randomValue)
+				Your magical attack causes ${randomValue} of damage!
+				* set enemy_hp, enemy_hp - randomValue
+				* set player_mp, player_mp - 10
+				* if player_mp < 0
+					* set player_mp, 0
+			* else
+				Sorry, not enough MP.
+
+	* sound "opengameart - evil-laugh-2 - evil_laugh_02.wav", adpcm
+	* native rollDice, 3, 6, into(randomValue)
+	The elder lich causes ${randomValue} of damage!
+	* set player_hp, player_hp - randomValue
+	* flush
+	
+* clear
+* if enemy_hp > 0
+	You lost!
+* else
+	You defeated the boss!
+	
+* background "obligatory ketchup.png"
+Originally made for Low Quality Game Jam 6.
+Obligatory Ketchup. ;)
+	
+* set enemy_hp, 100
+* set player_hp, 100
+* set player_mp, 50
